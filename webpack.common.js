@@ -3,10 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 // const webpack = require('webpack');
 
+
+
 module.exports = {
   entry: {
     app: './src/index.js',
-    another: './src/another-module.js'
+    // another: './src/another-module.js'
   },
   plugins:[
     new CleanWebpackPlugin(),
@@ -14,11 +16,11 @@ module.exports = {
       title: 'code splitting'
     })
   ],
-  optimization:{
-    splitChunks:{
-      chunks: 'all'
-    }
-  },
+  // optimization:{
+  //   splitChunks:{
+  //     chunks: 'all'
+  //   }
+  // },
   output: {
     filename: '[name].bundle.js',
     path:path.resolve(__dirname, 'dist'),
