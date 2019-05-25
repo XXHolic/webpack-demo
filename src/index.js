@@ -1,21 +1,17 @@
-// import _ from "lodash";
-// import printMe from "./print.js";
-import { cube, square } from "./math.js";
-import './style.css';
+import _ from "lodash";
+import printMe from "./print.js";
+import './style.css'
 
 function component() {
-  var element = document.createElement("pre");
+  var element = document.createElement("div");
   var btn = document.createElement("button");
 
-  // element.innerHTML = _.join(["Hello", "webpack"], ",");
+  element.innerHTML = _.join(["Hello", "webpack"], ",");
 
-  btn.innerHTML = [
-    'Hello webpack',
-    '5 cubed is equal to '+cube(5)
-  ].join('\n\n');
-  // btn.onclick = printMe;
+  btn.innerHTML = "click me an check the console";
+  btn.onclick = printMe;
 
-  // element.appendChild(btn);
+  element.appendChild(btn);
 
   return element;
 }
@@ -24,12 +20,12 @@ function component() {
 let element = component();
 document.body.appendChild(element);
 
-// if (module.hot) {
-//   module.hot.accept("./print.js", function() {
-//     console.log("Accept the updated printMe module");
-//     document.body.remove(element);
-//     element = component();
-//     document.body.appendChild(element);
-//     // printMe();
-//   });
-// }
+if (module.hot) {
+  module.hot.accept("./print.js", function() {
+    console.log("Accept the updated printMe module");
+    document.body.remove(element);
+    element = component();
+    document.body.appendChild(element);
+    // printMe();
+  });
+}
