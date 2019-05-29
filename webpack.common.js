@@ -8,7 +8,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Caching"
+      title: "shim"
+    }),
+    new webpack.ProvidePlugin({
+      _:'lodash'
     })
   ],
   optimization: {
@@ -22,6 +25,13 @@ module.exports = {
         }
       }
     }
+  },
+  module: {
+    rules:[{
+      test: require.resolve('./src/global.js'),
+      use:'exports-loader?parse=helpers.parse'
+
+    }]
   },
   output: {
     filename: "[name].[contenthash].js",

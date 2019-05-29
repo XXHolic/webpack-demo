@@ -1,14 +1,15 @@
-import _ from "lodash";
-import print from './print';
+// import _ from "lodash";
+// import print from './print';
+import { parse } from "./global.js";
 import './style.css'
 
 function component() {
   var element = document.createElement("div");
-  var btn = document.createElement("button");
+  // var btn = document.createElement("button");
 
   element.innerHTML = _.join(["Hello", "webpack"], ",");
 
-  btn.innerHTML = "click me an check the console";
+  // btn.innerHTML = "click me an check the console";
   // btn.onclick = function() {
   //   print();
   // };
@@ -18,7 +19,8 @@ function component() {
   //   print();
   // });
 
-  element.appendChild(btn);
+  // element.appendChild(btn);
+  parse();
 
   return element;
 }

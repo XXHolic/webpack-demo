@@ -4,6 +4,7 @@
   "description": "read and practice",
   "private": true,
   "dependencies": {
+    "exports-loader": "^0.7.0",
     "lodash": "^4.17.11"
   },
   "devDependencies": {
