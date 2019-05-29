@@ -1,7 +1,9 @@
-// import _ from "lodash";
+import _ from "lodash";
 // import print from './print';
 import { parse } from "./global.js";
-import './style.css'
+import "./style.css";
+
+
 
 function component() {
   var element = document.createElement("div");
@@ -36,5 +38,18 @@ if (module.hot) {
     element = component();
     document.body.appendChild(element);
     // printMe();
+  });
+}
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./service-worker.js")
+      .then(registration => {
+        console.log("SW registered: ", registration);
+      })
+      .catch(registrationError => {
+        console.log("SW registration failed: ", registrationError);
+      });
   });
 }
