@@ -3,7 +3,7 @@ const common = require("./webpack.common.js");
 const webpack = require("webpack");
 
 module.exports = merge(common, {
-  devtool: 'source-map',
+  // devtool: 'source-map',
   module: {
     rules: [
       {
@@ -14,6 +14,6 @@ module.exports = merge(common, {
   },
 
   plugins: [
-    new webpack.HashedModuleIdsPlugin()
+    // new webpack.HashedModuleIdsPlugin()
   ]
 });

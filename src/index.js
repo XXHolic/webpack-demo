@@ -1,6 +1,6 @@
 import _ from "lodash";
 // import print from './print';
-import { parse } from "./global.js";
+// import { parse } from "./global.js";
 import "./style.css";
 
 
@@ -22,7 +22,7 @@ function component() {
   // });
 
   // element.appendChild(btn);
-  parse();
+  // parse();
 
   return element;
 }

@@ -4,23 +4,24 @@ const webpack = require("webpack");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
 
-module.exports = merge(common,{
-  devtool: 'inline-source-map',
+module.exports = merge(common, {
+  devtool: "inline-source-map",
   devServer: {
-    contentBase: './dist',
-    hot: true,
+    contentBase: "./dist"
+    // hot: true,
   },
-  module:{
-    rules:[
+  module: {
+    rules: [
       {
         test: /\.css$/,
-        use:['style-loader','css-loader']
+        use: ["style-loader", "css-loader"]
       }
     ]
   },
-  plugins:[
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
+  plugins: [
+    // new webpack.NamedModulesPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     // new BundleAnalyzerPlugin()
-  ],
-})
+
+  ]
+});
