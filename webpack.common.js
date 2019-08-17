@@ -8,11 +8,11 @@ var ManifestPlugin = require("webpack-manifest-plugin");
 module.exports = {
   entry: "./src/index.js",
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "test"
-    }),
-    new ManifestPlugin()
+    // new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   title: "test"
+    // }),
+    // new ManifestPlugin()
     // new WorkboxPlugin.GenerateSW({
     //   clientsClaim: true,
     //   skipWaiting: true
@@ -21,28 +21,50 @@ module.exports = {
     //   _:'lodash'
     // })
   ],
-  optimization: {
-    // runtimeChunk: "single",
-    // splitChunks: {
-    //   cacheGroups: {
-    //     vendor: {
-    //       test: /[\\/]node_modules[\\/]/,
-    //       name: "vendors",
-    //       chunks: "all"
-    //     }
-    //   }
-    // }
-  },
+  // optimization: {
+  //   runtimeChunk: "single",
+  //   splitChunks: {
+  //     cacheGroups: {
+  //       vendor: {
+  //         test: /[\\/]node_modules[\\/]/,
+  //         name: "vendors",
+  //         chunks: "all"
+  //       }
+  //     }
+  //   }
+  // },
   module: {
     rules: [
       // {
       //   test: require.resolve("./src/global.js"),
       //   use: "exports-loader?parse=helpers.parse"
       // }
+      {
+        test: /\.js$/,
+        exclude: "/node_modules",
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: [["@babel/preset-env"]],
+            plugins: ["@babel/plugin-transform-arrow-functions","@babel/plugin-syntax-dynamic-import",
+            // [
+            //   "@babel/plugin-transform-runtime",
+            //   {
+            //     "absoluteRuntime": false,
+            //     "corejs": false,
+            //     "helpers": true,
+            //     "regenerator": true,
+            //     "useESModules": false
+            //   }
+            // ]
+            ]
+          }
+        }
+      },
     ]
   },
   output: {
-    filename: "[name].bundle.js",
+    filename: "main.js",
     path: path.resolve(__dirname, "dist")
   }
 };
