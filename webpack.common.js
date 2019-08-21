@@ -39,28 +39,21 @@ module.exports = {
       //   test: require.resolve("./src/global.js"),
       //   use: "exports-loader?parse=helpers.parse"
       // }
-      {
-        test: /\.js$/,
-        exclude: "/node_modules",
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: [["@babel/preset-env"]],
-            plugins: ["@babel/plugin-transform-arrow-functions","@babel/plugin-syntax-dynamic-import",
-            // [
-            //   "@babel/plugin-transform-runtime",
-            //   {
-            //     "absoluteRuntime": false,
-            //     "corejs": false,
-            //     "helpers": true,
-            //     "regenerator": true,
-            //     "useESModules": false
-            //   }
-            // ]
-            ]
-          }
-        }
-      },
+      // {
+      //   test: /\.js$/,
+      //   exclude: "/node_modules",
+      //   use: {
+      //     loader: "babel-loader",
+      //     options: {
+      //       presets: [["@babel/preset-env",{"targets": "> 0.25%, not dead"}]],
+      //       plugins: [
+      //         "@babel/plugin-transform-runtime",
+      //         "@babel/plugin-transform-arrow-functions",
+      //         "@babel/plugin-syntax-dynamic-import",
+      //       ]
+      //     }
+      //   }
+      // },
     ]
   },
   output: {
