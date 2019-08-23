@@ -1,9 +1,10 @@
 import {square} from './math';
+import _ from 'lodash';
 
 function component() {
   var element = document.createElement("div");
   var num = square(2);
-  element.innerHTML = "Hello, Webpack "+num;
+  element.innerHTML = _.join(["Hello, Webpack ",num],'');
   return element;
 }
 
