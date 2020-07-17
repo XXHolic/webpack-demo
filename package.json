@@ -7,7 +7,7 @@
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.5.5",
     "exports-loader": "^0.7.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.5",
