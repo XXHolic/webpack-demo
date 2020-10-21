@@ -2,7 +2,6 @@
   "name": "webpack-demo",
   "version": "1.0.0",
   "description": "read and practice",
-  "private": true,
   "dependencies": {
     "@babel/polyfill": "^7.4.4",
     "@babel/runtime": "^7.5.5",

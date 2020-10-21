@@ -8,10 +8,10 @@ var ManifestPlugin = require("webpack-manifest-plugin");
 module.exports = {
   entry: "./src/index.js",
   plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      title: "webpack"
-    }),
+    // new CleanWebpackPlugin(),
+    // new HtmlWebpackPlugin({
+    //   title: "webpack"
+    // }),
     // new ManifestPlugin()
     // new WorkboxPlugin.GenerateSW({
     //   clientsClaim: true,
@@ -22,16 +22,16 @@ module.exports = {
     // })
   ],
   optimization: {
-    runtimeChunk: "single",
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendors",
-          chunks: "all"
-        }
-      }
-    }
+    // runtimeChunk: "single",
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: "vendors",
+    //       chunks: "all"
+    //     }
+    //   }
+    // }
   },
   module: {
     rules: [
@@ -57,7 +57,7 @@ module.exports = {
     ]
   },
   output: {
-    filename: "[name].[contenthash].js",
+    filename: "[name].[hash].js",
     path: path.resolve(__dirname, "dist")
   }
 };
